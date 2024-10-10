@@ -16,15 +16,17 @@
         pulalinha()
     }
 
-    let numerosecreto = $
+    let numerosecreto = Math.round(Math.random() * 10)
 
     let chute = prompt(`qual e o numero secreto`)
 
     if(chute == numerosecreto){
         mostrar(` Parabens, voce acertou`)
     } else {
-        mostrar(`voce errou `)
+        mostrar(`voce errou, o numero secreto é ${numerosecreto}`)
     }
+
+    
 
     //if(chute != numerosecreto) -> e o sinal de diferente 
     </script>
