@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olinpiadas</title>
+    <title>tabuada02</title>
 </head>
 <body>
     <script>
-     function pulalinha(){
+       function pulalinha(){
         document.write('<br>')
     }
 
@@ -16,13 +16,13 @@
         pulalinha()
     }
 
-    let anoOlinpiadas = 1896
+    let tabuada = parseInt(prompt(`Qual tabuada você deseja?`))
 
+       mostrar(`A tabuada do: ${tabuada} é`)
 
-    while(anoOlinpiadas <= 2024){
-        alert(` teve olinpiadas em` + anoOlinpiadas)
-        anoOlinpiadas = anoOlinpiadas + 4
-    }
+       for(let i = 1; i <= 10; i++){
+        mostrar(`${i} X ${tabuada} = ${i*tabuada}`)
+       }
 
     </script>
 </body>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora de media</title>
+</head>
+<body>
+    <script>
+       function pulalinha(){
+        document.write('<br>')
+    }
+
+    function mostrar(texto){
+        document.write(texto)
+        pulalinha()
+    }
+
+    let materia = prompt(`Qual a disiplina que voce quer a media ?`)
+
+    let trimestre = prompt(`Quanros trimestra voce ja fez de : ${materia} ?`)
+    
+    let totalNotas = 0
+
+    for(let i = 1; i <= trimestre; i++){
+        let nota = parseInt(prompt(`Qual a sua nota no ${i} º trimestre ?`))
+        totalNotas = totalNotas + nota 
+    }
+
+    let media = totalNotas/trimestre
+
+    mostrar(`Sua media ate momento é : ${media}`)
+
+    </script>
+</body>
+</html>
