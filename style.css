@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --fonte-titulo: "Arvo", serif;
+    --fonte-texto:"Playfair Display", serif;
+    --prussian-blue: #003049ff;
+    --fire-engine-red: #d62828ff;
+    --orange-wheel: #f77f00ff;
+    --xanthous: #fcbf49ff;
+    --vanilla: #eae2b7ff;
+}
+
+body{
+    background-color:var(--fire-engine-red);
+    font-family: var(--orange-wheel);
+}
+
+header{
+    background-color: var(--prussian-blue);
+    text-align: center;
+    padding: 2em;
+    color: var(--orange-wheel);
+}
+
+header h1{
+    font-family: var(--fire-engine-red);
+    font-size: 2.5em;
+}
+
+.Projetos{
+    padding: 2em;
+    display: flex;
+    
+}
