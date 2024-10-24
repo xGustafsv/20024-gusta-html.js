@@ -8,7 +8,7 @@
 <body>
     <script>
             function pulalinha(){
-                document.write('<br')
+                document.write('<br>')
             }
             function mostrar(texto){
                 document.write(texto)
@@ -20,11 +20,11 @@
         const MaeIdade = ano - 1987
         const PaiIdade = ano - 1984
 
-        mostrar(`Oi, meu nome é Gustavo é tenho`$(minhaIdade) `anos` )
+        mostrar(`Oi, meu nome é Gustavo é tenho ${minhaIdade} anos` )
         pulalinha()
-        mostrar(`O nome da minha mãe é sheila e tem` $(MaeIdade) ` anos `)
+        mostrar(`O nome da minha mãe é sheila e tem ${MaeIdade}  anos `)
         pulalinha()
-        mostrar(`O nome do meu pai é eleandro é  tem` $(PaiIdade) ` anos `)
+        mostrar(`O nome do meu pai é eleandro é  tem  ${PaiIdade}  anos`)
         pulalinha()
         pulalinha()
 
@@ -32,7 +32,7 @@
 
         mostrar(` Em 2030 minha familia terá` + `<br><br>`)
         mostrar(`eu terei` $(anos - 2008) + `anos <br>`)
-        mostrar(`minha mãe terá` $(ano - 1987) + `anos <br>`)
+        mostrar(`minha mãe terá` ${ano - 1987} + `anos <br>`)
         mostrar(`meu pai terá` ${ano - 1984} + ` anos <br>`)
 
         let media = (minhaIdade + MaeIdade + PaiIdade)/3
