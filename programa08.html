@@ -3,34 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculadora de media</title>
+    <title>Calculadora de Média</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+    <h1>Calculadora de Média</h1>
     <script>
-       function pulalinha(){
-        document.write('<br>')
-    }
+        function mostrar(texto) {
+            const resultadoDiv = document.createElement('div');
+            resultadoDiv.className = 'resultado';
+            resultadoDiv.textContent = texto;
+            document.body.appendChild(resultadoDiv);
+        }
 
-    function mostrar(texto){
-        document.write(texto)
-        pulalinha()
-    }
+        let materia = prompt("Qual a disciplina que você quer a média?");
+        let trimestre = parseInt(prompt(`Quantos trimestres você já fez de: ${materia}?`));
 
-    let materia = prompt(`Qual a disiplina que voce quer a media ?`)
+        if (isNaN(trimestre) || trimestre <= 0) {
+            alert("Por favor, insira um número válido de trimestres.");
+        } else {
+            let totalNotas = 0;
 
-    let trimestre = prompt(`Quanros trimestra voce ja fez de : ${materia} ?`)
-    
-    let totalNotas = 0
+            for (let i = 1; i <= trimestre; i++) {
+                let nota = parseFloat(prompt(`Qual a sua nota no ${i}º trimestre?`));
+                if (!isNaN(nota)) {
+                    totalNotas += nota;
+                } else {
+                    alert("Por favor, insira uma nota válida.");
+                    i--; // Decrement i to repeat the iteration for a valid note
+                }
+            }
 
-    for(let i = 1; i <= trimestre; i++){
-        let nota = parseInt(prompt(`Qual a sua nota no ${i} º trimestre ?`))
-        totalNotas = totalNotas + nota 
-    }
-
-    let media = totalNotas/trimestre
-
-    mostrar(`Sua media ate momento é : ${media}`)
-
+            let media = totalNotas / trimestre;
+            mostrar(`Sua média até o momento é: ${media.toFixed(2)}`);
+        }
     </script>
 </body>
 </html>
