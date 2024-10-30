@@ -65,7 +65,34 @@ header h1{
     color: var(--fire-engine-red);
 }
 
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 footer a{
     text-decoration: none;
     color: var(--fire-engine-red);
+}
+
+.principal-numero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.numero-inpet{
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+.principal-botao{
+    margin-left: 1em;
+    font-size: 1.5em;
+    padding: 1em;
+    background-color: var(--prussian-blue);
+    color: var(--orange-wheel);
+    border-radius: 15px;
 }
