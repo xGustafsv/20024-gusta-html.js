@@ -1,98 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número Secreto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Número Secreto</h1>
+        <p>Você gostaria de adivinhar o número?</p>
+    </header>
+    <main class="principal-numero">
+        <input class="numero-input" type="text">
+        <button class="principal-numero-botao" type="button">Compare o número secreto</button>
+    </main>
+    <footer>
+        <h3>Feitos por <a href="https://github.com/xGustafsv">gustavo henrique></a></h3>
+    </footer>
+    <script>
+        function sorteiaNumero() {
+            return Math.round(Math.random() * 100);
+        }
 
-*{
-    margin: 0;
-    padding: 0;
-}
+        function caixa(quantidade) {
+            let listaSegredos = [];
+            let numero = 1;
+            while (numero <= quantidade) {
+                let numeroAleatorio = sorteiaNumero();
+                let achou = false;
+                for (let i = 0; i < listaSegredos.length; i++) {
+                    if (listaSegredos[i] == numeroAleatorio) {
+                        achou = true;
+                        break;
+                    }
+                }
+                if (!achou) {
+                    listaSegredos.push(numeroAleatorio);
+                    numero++;
+                }
+            }
+            return listaSegredos;
+        }
 
-:root{
-    --fonte-titulo: "Arvo", serif;
-    --fonte-texto:"Playfair Display", serif;
-    --prussian-blue: #003049ff;
-    --fire-engine-red: #d62828ff;
-    --orange-wheel: #f77f00ff;
-    --xanthous: #fcbf49ff;
-    --vanilla: #eae2b7ff;
-}
+        let segredos = caixa(5);
+        console.log(segredos);
+        let campoNumero = document.querySelector('input');
+        campoNumero.focus();
+       
+        function verifica() {
+            let acertou = false;
+            let numeroTentativa = parseInt(campoNumero.value);
+            for (let i = 0; i < segredos.length; i++) {
+                if (segredos[i] === numeroTentativa) {
+                    alert(`Você acertou :-3`);
+                    acertou = true;
+                    break;
+                }
+            }
+            if (!acertou) {
+                alert(`Você errou`);
+            }
+            campoNumero.value = '';
+            campoNumero.focus(); // Foca novamente no campo de input
+        }
 
-body{
-    background-color:var(--fire-engine-red);
-    font-family: var(--orange-wheel);
-}
-
-header, footer{
-    background-color: var(--prussian-blue);
-    text-align: center;
-    padding: 2em;
-    color: var(--orange-wheel);
-}
-
-header{
-    background-color: var(--prussian-blue);
-    text-align: center;
-    padding: 2em;
-    color: var(--orange-wheel);
-}
-
-header h1{
-    font-family: var(--fire-engine-red);
-    font-size: 2.5em;
-}
-
-.Projetos{
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;  
-}
-
-.Cartao{
-    text-align: center;
-    background-color: var(--prussian-blue);
-    width: 100%;
-    margin: 1em 0;
-    color: var(--orange-wheel);
-    padding: 1em 0;
-    border-radius: 10px;
-}
-
-.Cartao:hover{
-    background-color: var(--vanilla);
-}
-
-.Cartao a{
-    text-decoration: none;
-    color: var(--fire-engine-red);
-}
-
-footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-footer a{
-    text-decoration: none;
-    color: var(--fire-engine-red);
-}
-
-.principal-numero{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-}
-
-.numero-inpet{
-    font-size: 1.5em;
-    padding: 1em;
-}
-
-.principal-botao{
-    margin-left: 1em;
-    font-size: 1.5em;
-    padding: 1em;
-    background-color: var(--prussian-blue);
-    color: var(--orange-wheel);
-    border-radius: 15px;
-}
+        let botao = document.querySelector('button');
+        botao.onclick = verifica;
+    </script>
+</body>
+</html>
